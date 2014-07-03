@@ -1,6 +1,6 @@
 #### Niger GeoSpatial Analysis Code
 
-This stata code will reproduce the data and results of our geospatial analysis of World Bank Living Standard's Measurement Study (LSMS) for Niger. The following Stata do files create a folder file structure for the project, processes the LSMS Niger data, and produces a series of summary tables and logistic regression models to analyze how exogenous shocks affect households throuhgout Niger. 
+This Stata code will reproduce the data and results of our geospatial analysis of World Bank Living Standard's Measurement Study (LSMS) for Niger. The following Stata do files create a folder file structure for the project, processes the LSMS Niger data, and produces a series of summary tables and logistic regression models to analyze how exogenous shocks affect households throuhgout Niger. 
 
 To reproduce the analysis, run the .do files in this order:
 * 00_SetupFolderGlobals.do
