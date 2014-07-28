@@ -7,7 +7,7 @@
 # Owner:	USAID GeoCenter | OakStream Systems, LLC
 # License:	MIT License
 # Ado(s):	polychoric (For mixed variable factor anlaysis) 
-# Dependencies: copylables, attachlabels, 00_SetupFoldersGlobals.do
+# Required: copylables, attachlabels, 00_SetupFoldersGlobals.do
 # Links: http://www.ats.ucla.edu/stat/stata/faq/efa_categorical.htm
 #-------------------------------------------------------------------------------
 */
