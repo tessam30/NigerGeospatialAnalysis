@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Niger Geospatial Livelihoods Analysis by tessam30</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Niger Geospatial Livelihoods Analysis</h1>
+        <p>Stata code to replicate geospatial analysis of World Bank Living Standard&#39;s Measurement Study for Niger. </p>
+
+        <p class="view"><a href="https://github.com/tessam30/NigerGeospatialAnalysis">View the Project on GitHub <small>tessam30/NigerGeospatialAnalysis</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tessam30/NigerGeospatialAnalysis/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tessam30/NigerGeospatialAnalysis/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tessam30/NigerGeospatialAnalysis">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h4>
+<a name="niger-geospatial-livelihood-analysis-of-world-bank-lsms-data" class="anchor" href="#niger-geospatial-livelihood-analysis-of-world-bank-lsms-data"><span class="octicon octicon-link"></span></a>Niger Geospatial Livelihood Analysis of World Bank LSMS Data</h4>
+
+<p>This Stata code will reproduce the data and results of our geospatial analysis of <a href="http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883%7EpagePK:64168445%7EpiPK:64168309%7EtheSitePK:7420261,00.html">World Bank Living Standard's Measurement Study (LSMS) for Niger</a>.  Using the World Bank's 2011/12 National Household Living Conditions and Agriculture Survey for Niger, the GeoCenter analyzed the spatial dimensions of vulnerability and to test how well vulnerability to external shocks could explained by household, community, and geographic data. The following Stata do files create a folder file structure for the project, processes the LSMS Niger data, and produces a series of summary tables and logistic regression models to analyze how exogenous shocks affect rural households in Niger. </p>
+
+<p>To reproduce the analysis, run the .do files in this order:</p>
+
+<ul>
+<li>00_SetupFolderGlobals.do</li>
+<li>01_hhchar.do</li>
+<li>02_hhinfrastructure.do</li>
+<li>03_hhnatcap.do</li>
+<li>04_hhpc.do</li>
+<li>05_transfers.do</li>
+<li>06_shocks.do</li>
+<li>07_foodsecurity.do</li>
+<li>08_commservices.do</li>
+<li>09_ShockAnalysis.do</li>
+</ul><p>To generate the forest plots created in R use the following code:</p>
+
+<ul>
+<li>TODO</li>
+</ul><p>Questions: tessam[at]usaid.gov</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tessam30">tessam30</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
