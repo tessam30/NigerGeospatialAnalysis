@@ -6,7 +6,7 @@
 # Modified: 	07/23/2014
 # Owner:	USAID GeoCenter | OakStream Systems, LLC
 # License:	MIT License
-# Ado(s):	mat2txt, AdminTwoRecode.do, estout
+# Ado(s):	mat2txt, AdminTwoRecode.do, estout, winsor2
 # Dependencies: Admin2.dta
 #-------------------------------------------------------------------------------
 */
@@ -26,7 +26,7 @@ do "$pathdo/08_comservices.do"
 set more off
 
 * Check that fixed-effect geography file is included in dataout folder
-* If not there, it must be created or downloaded from github (link)
+* If not there, it must be created or downloaded from github (https://github.com/tessam30/NigerGeospatialAnalysis/tree/master/data)
 cd "$pathout"
 local required_file Admin2
 foreach x of local required_file { 
@@ -151,7 +151,7 @@ g byte regFilt = 1 if e(sample)
 
 * Extract the coefficients and standard errors; (http://www.stata.com/statalist/archive/2009-04/msg00240.html)
 matrix V = e(V)
-* We'll take the sqrt in R to get the standard errors 
+* Rake the sqrt in R to get the standard errors 
 matrix Var = vecdiag(V)
 matrix A = (e(b)\Var)'
 mat2txt, matrix(A) saving("$pathRin/Anyshock") replace
@@ -189,7 +189,7 @@ esttab using "$pathRin/WeatherShocks.txt", replace wide plain se mlabels(none)
 export 
 export delimited using "$pathout\R_spatreg.csv" if regFilt==1, replace
 
-* Estimate the nubmer of female headed households in rural areas
+* Estimate the nubmer of female headed households in rural areas (2011 pop estimate, 82% rural)
 * svmat - creates variables from a matrix
 g popsize2011R = 16468890*.82
 svy, subpop(urbrur): mean femHead
