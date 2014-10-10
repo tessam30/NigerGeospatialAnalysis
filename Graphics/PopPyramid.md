@@ -10,8 +10,8 @@ library(RColorBrewer)
 library(colorRamps)
 ```
 
-Check out color ramps available.  
 ```r
+# Check out color ramps available.  
 display.brewer.all()
 ```
 Add in the data that was gathered from the WB. This eventually should be automated as well.
@@ -25,25 +25,25 @@ agelabels<-c("0-4","5-9","10-14","15-19","20-24","25-29","30-34",
              "75-79", "80+")
 ```
 
-
-Set color parameters.
 ```r
+# Set color parameters. 
 colourCountxx = length(xx.pop)  
 colourCountxy = length(xy.pop)  
 mcol = colorRampPalette(rev(brewer.pal(8, "Blues")))  
 fcol = colorRampPalette(rev(brewer.pal(8, "PuRd")))
 ```
 
-Create pyramid and apply colors.
+
 ```r
+# Create pyramid and apply colors.
 poppyr <- par(mar=pyramid.plot(xy.pop,xx.pop,labels=agelabels,
   main="Niger Population Pyramid 2015",
   lxcol=mcol(colourCountxx),rxcol=fcol(colourCountxy),
   gap=1,show.values=TRUE, ndig=1, space=0))
 ```
 
-Use code below to add custom notes to margins
 ```r
+# add custom notes to margins
 mtext(c("Source: World Bank 2015 Population Projections"),side=1,line=1.5,at=c(.5), cex=.66)
 mtext(c("Percent of overall population"),side=1,line=1,at=c(-7), cex=1)
 ```
