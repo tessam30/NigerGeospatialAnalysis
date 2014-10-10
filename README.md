@@ -18,6 +18,7 @@ To reproduce the analysis, clone the repository, set the appropriate working dir
   
 R files  
 * The two R files (SpatReg.R and ShocksGraphs.R) can be used to reproduce the spatial filter model results and the forest plots, respectively.   
+  
 Python files  
 * I am working on a Python script to reproduce all to the interpolated surfaces using [Empirical Bayesian Kriging (EBK)][2].  
 
