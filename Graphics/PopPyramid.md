@@ -2,9 +2,9 @@ As part of the project we were asked to create a few reference products. To visu
 
 <p><img src="https://cloud.githubusercontent.com/assets/5873344/4594468/eabd7814-508f-11e4-85ad-a13c0f5b0505.png" alt="Pop pyramid. Source: GeoCenter" align="middle"></p>
 
-The code to create the graphic follows:  
+The code to create the graphic follows. Works best if executed in RStudio.  
 ```r
-Load required libraries  
+# Load required libraries  
 library(plotrix)    
 library(RColorBrewer)    
 library(colorRamps)
