@@ -1,4 +1,6 @@
 #### Niger Geospatial Livelihood Analysis of World Bank LSMS Data
+<img src="https://cloud.githubusercontent.com/assets/5873344/4593685/2e5d1e24-5088-11e4-82ce-09b65b1f7bc2.jpg" alt="Smoothed Shock Estimates. Source: GeoCenter" align="middle">
+
 
 This Stata code will reproduce the data and results of our geospatial analysis of [World Bank Living Standard's Measurement Study (LSMS) for Niger][1]. The following Stata do files create a folder file structure for the project, processes the LSMS Niger data, and produces a series of summary tables and logistic regression models to analyze how exogenous shocks affect rural households in Niger. 
 
