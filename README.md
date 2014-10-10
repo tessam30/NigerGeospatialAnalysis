@@ -15,10 +15,13 @@ To reproduce the analysis, clone the repository, set the appropriate working dir
 * 07_foodsecurity.do
 * 08_commservices.do
 * 09_ShockAnalysis.do  
-
+  
 R files  
 * The two R files (SpatReg.R and ShocksGraphs.R) can be used to reproduce the spatial filter model results and the forest plots, respectively.   
+Python files  
+* I am working on a Python script to reproduce all to the interpolated surfaces using [Empirical Bayesian Kriging (EBK)][2].  
 
 Questions: tessam[at]usaid.gov  
 
-[1]: http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883~pagePK:64168445~piPK:64168309~theSitePK:7420261,00.html
+[1]: http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883~pagePK:64168445~piPK:64168309~theSitePK:7420261,00.html.
+[2]: http://resources.arcgis.com/en/help/main/10.1/index.html#//0031000000q9000000  
