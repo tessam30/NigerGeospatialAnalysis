@@ -32,14 +32,13 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h4>
-<a name="niger-geospatial-livelihoods-analysis-of-world-bank-lsms-data" class="anchor" href="#niger-geospatial-livelihoods-analysis-of-world-bank-lsms-data"><span class="octicon octicon-link"></span></a>Niger <a href="https://www.dropbox.com/s/yfu61aizi6le2m9/all_shocks.jpg?dl=0">Geospatial Livelihoods Analysis</a> of World Bank LSMS Data</h4>
+<a name="niger-geospatial-livelihoods-analysis-of-world-bank-lsms-data--" class="anchor" href="#niger-geospatial-livelihoods-analysis-of-world-bank-lsms-data--"><span class="octicon octicon-link"></span></a>Niger <a href="https://www.dropbox.com/s/yfu61aizi6le2m9/all_shocks.jpg?dl=0">Geospatial Livelihoods Analysis</a> of World Bank LSMS Data  </h4><p><img src="https://cloud.githubusercontent.com/assets/5873344/4593685/2e5d1e24-5088-11e4-82ce-09b65b1f7bc2.jpg" alt="Smoothed Shock Estimates. Source: GeoCenter" align="middle"></p>
 
-<p>This Stata code will reproduce the data and results of our geospatial analysis of <a href="http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883%7EpagePK:64168445%7EpiPK:64168309%7EtheSitePK:7420261,00.html">World Bank Living Standard's Measurement Study (LSMS) for Niger</a>.  Using the World Bank's 2011/12 National Household Living Conditions and Agriculture Survey for Niger, the GeoCenter analyzed the spatial dimensions of vulnerability to test how well vulnerability to external shocks could explained by household, community, and geographic data. The following Stata do files create a folder file structure for the project, processes the LSMS Niger data, and produces a series of summary tables and regression models to analyze how exogenous shocks affect rural households in Niger. </p>
-
-<p>To reproduce the analysis, run the .do files in this order:</p>
+<p>This Stata code will reproduce the data and results of our geospatial analysis of <a href="http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883%7EpagePK:64168445%7EpiPK:64168309%7EtheSitePK:7420261,00.html.">World Bank Living Standard's Measurement Study (LSMS) for Niger</a>.  Using the World Bank's 2011/12 National Household Living Conditions and Agriculture Survey for Niger, the GeoCenter analyzed the spatial dimensions of vulnerability to test how well vulnerability to external shocks could explained by household, community, and geographic data. To reproduce the analysis, clone the repository, set the appropriate working directory and run the .do files in the following order. The .do files work best if copied into the <code>ProjectPath\Dofiles\</code> folder that is created after running the setup file. Download and unzip the raw WB LSMS data to the <code>Datain</code> folder.</p>
 
 <ul>
-<li>00_SetupFolderGlobals.do</li>
+<li>00_SetupFolderGlobals.do<br>
+</li>
 <li>01_hhchar.do</li>
 <li>02_hhinfrastructure.do</li>
 <li>03_hhnatcap.do</li>
@@ -48,16 +47,25 @@
 <li>06_shocks.do</li>
 <li>07_foodsecurity.do</li>
 <li>08_commservices.do</li>
-<li>09_ShockAnalysis.do</li>
+<li>09_ShockAnalysis.do<br>
+</li>
 </ul>
 
-<p>To generate the forest plots created in R use the following code:</p>
+<p>R files  </p>
 
 <ul>
-<li>TODO</li>
+<li>The two R files (SpatReg.R and ShocksGraphs.R) can be used to reproduce the spatial filter model results and the forest plots, respectively.<br>
+</li>
 </ul>
 
-<p>Questions: tessam[at]usaid.gov</p>
+<p>Python files  </p>
+
+<ul>
+<li>I am working on a Python script to reproduce all to the interpolated surfaces using <a href="http://resources.arcgis.com/en/help/main/10.1/index.html#//0031000000q9000000">Empirical Bayesian Kriging (EBK)</a>.<br>
+</li>
+</ul>
+
+<p>Questions: tessam[at]usaid.gov  </p>
       </section>
     </div>
 
