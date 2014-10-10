@@ -1,0 +1,5 @@
+#### Geographically Weighted Regression Results
+===
+
+The final model we estimate is a geographically weighted regression (GWR).  GWR differs from the previous two techniques in that it estimates a local model of the dependent variable by fitting an ordinary linear regression equation to a neighborhood around each feature in the dataset.  This gives us a set of regression coefficients, standard errors, and goodness of fit statistics for each household, based solely upon the surrounding area.  This can elucidate spatial patterns in the relationships, such as isolating regions where the relationship between two variables differs from the rest of the country, suggesting the presence of unique local conditions. This routine is accomplished by setting up bandwidths around each target feature. The characteristics of the bandwidths are determined by selecting values for the kernel type, bandwidth method, distance, and number of neighbors to be used in the estimation. For our estimation routines we used fixed kernels and Akaikie Information Criterion Bandwidths. All of the GWR models were estimated using ArcGIS 10.2 Spatial Statistics Toolbox. 
+
