@@ -5,7 +5,7 @@ This Stata code will reproduce the data and results of our geospatial analysis o
 
 To reproduce the analysis, clone the repository, set the appropriate working directory and run the .do files in the following order. The .do files work best if copied into the ```ProjectPath\Dofiles\``` folder that is created after running the setup file. Download and unzip the raw WB LSMS data to the ```Datain``` folder.
 
-* 00_SetupFolderGlobals.do^ 
+* 00_SetupFolderGlobals.do  
 * 01_hhchar.do
 * 02_hhinfrastructure.do
 * 03_hhnatcap.do
@@ -15,6 +15,9 @@ To reproduce the analysis, clone the repository, set the appropriate working dir
 * 07_foodsecurity.do
 * 08_commservices.do
 * 09_ShockAnalysis.do  
+
+R files  
+* The two R files (SpatReg.R and ShocksGraphs.R) can be used to reproduce the spatial filter model results and the forest plots, respectively.   
 
 Questions: tessam[at]usaid.gov  
 
