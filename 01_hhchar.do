@@ -185,7 +185,7 @@ recode educHigh (2=1) (3=2) (4=3) (5=4)
 
 * Average education for adults in hh
 egen educAdult = mean(edu) if (ms01q06a>=15 & ms01q06a<.) & edu!=1, by(hid)
-la var educAdult "average education in hh age>15)
+la var educAdult "average education in hh age>15"  
 
 * housecleaning
 drop under15t under24t 
