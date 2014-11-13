@@ -21,7 +21,7 @@ R files
   
 Python files  
 * I am working on a Python script to reproduce all to the interpolated surfaces using [Empirical Bayesian Kriging (EBK)][2].  
-
+*Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of United States Agency for International Development or the United States Government. All errors remain our own.*
 Questions: tessam[at]usaid.gov  
 
 [1]: http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883~pagePK:64168445~piPK:64168309~theSitePK:7420261,00.html.
