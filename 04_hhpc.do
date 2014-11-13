@@ -419,7 +419,7 @@ la var TLUcattle "Tropical Livestock Units: cattle"
 g TLUsheep = (sheepTot + eweTot + bgoatTot + fgoatTot) * sheepVal
 la var TLUsheep "Tropical Livestock Units: sheep"
 
-g TLUhorses = (oxTot + bullTot + donkeyTot + horseTot) * horsesVal
+g TLUhorses = (oxTot + bullTot + horseTot) * horsesVal
 la var TLUhorses "Tropical Livestock Units: horses"
 
 g TLUmules = donkeyTot * mulesVal
