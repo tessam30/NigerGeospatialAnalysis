@@ -119,7 +119,7 @@ notes educAdult: missing values indicate that no member of household was over 25
 compress
 
 * Save
-save "$pathout/hhchar.dta", replace
+save "$pathout/hhchar.dta", replace  
 ```
 
 
