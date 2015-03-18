@@ -151,7 +151,7 @@ g byte regFilt = 1 if e(sample)
 
 * Extract the coefficients and standard errors; (http://www.stata.com/statalist/archive/2009-04/msg00240.html)
 matrix V = e(V)
-* Rake the sqrt in R to get the standard errors 
+* Take the sqrt in R to get the standard errors 
 matrix Var = vecdiag(V)
 matrix A = (e(b)\Var)'
 mat2txt, matrix(A) saving("$pathRin/Anyshock") replace
