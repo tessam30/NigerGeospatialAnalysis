@@ -24,8 +24,6 @@ Python files
   
 *Disclaimer: The findings, interpretation, and conclusions expressed herein are those of the authors and do not necessarily reflect the views of United States Agency for International Development or the United States Government. All errors remain our own.*  
 
-Questions: tessam[at]usaid.gov  
-
 [1]: http://web.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/EXTLSMS/EXTSURAGRI/0,,contentMDK:23353883~pagePK:64168445~piPK:64168309~theSitePK:7420261,00.html.
 [2]: http://resources.arcgis.com/en/help/main/10.1/index.html#//0031000000q9000000  
 [3]: https://github.com/tessam30/NigerGeospatialAnalysis/blob/master/GettingStarted.md  
