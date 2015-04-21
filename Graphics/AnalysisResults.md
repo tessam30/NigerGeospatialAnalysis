@@ -12,5 +12,5 @@ Results from logistic regression models estimated in Stata 13.1 SE using the sur
 Results from the spatial filter model estimed in R using `RColorBrewer, spdep, classInt, MASS, maptools` libraries.
 <p><img src="https://cloud.githubusercontent.com/assets/5873344/4594082/6eba67d4-508c-11e4-9823-106be59f8982.png" alt="Logistic Estimates from Spatial Filter Model. Source: GeoCenter" align="middle"></p>
 
-Finally, results from logistic regression on a composite shock variable using geographic fixed-effects and other control variables.  
+Finally, results from logistic regression on a composite shock variable using geographic fixed-effects and other control variables. Because the data from the LSMS may not necessarily be represantative at the sub-national level (2nd Administrative Unit) the results should be interpreted as being suggestive rather than definitive.  
 <p><img src="https://cloud.githubusercontent.com/assets/5873344/4594303/4e024c1c-508e-11e4-97db-f69fcf238c4d.jpg" alt="Logistic Estimates from Spatial Filter Model. Source: GeoCenter" align="middle"></p>
