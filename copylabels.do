@@ -3,7 +3,6 @@
 # Purpose:	Copies labels from a dataset; for use before collapse command
 # Author:	Tim Essam, Ph.D.
 # Created:	14/11/2013
-# Copyright:	USAID GeoCenter
 # Licence:	<Tim Essam Consulting/OakStream Systems, LLC>
 # Ado(s):	none
 #-------------------------------------------------------------------------------
