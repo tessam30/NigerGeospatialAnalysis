@@ -6,7 +6,7 @@
 # Modified: 	07/23/2014
 # Owner:	USAID GeoCenter | OakStream Systems, LLC
 # License:	MIT License
-# Ado(s):	mat2txt, AdminTwoRecode.do, estout, winsor2
+# Ado(s):	mat2txt, AdminTwoRecode.do, estout
 # Dependencies: Admin2.dta
 #-------------------------------------------------------------------------------
 */
@@ -26,7 +26,7 @@ do "$pathdo/08_comservices.do"
 set more off
 
 * Check that fixed-effect geography file is included in dataout folder
-* If not there, it must be created or downloaded from github (https://github.com/tessam30/NigerGeospatialAnalysis/tree/master/data)
+* If not there, it must be created or downloaded from github (link)
 cd "$pathout"
 local required_file Admin2
 foreach x of local required_file { 
@@ -40,7 +40,7 @@ foreach x of local required_file {
 		else disp in yellow "`x' currently installed and will be merged below in code (@120ish)."
 	}
 *end
-cd "$path"
+cd $path
 
 
 * Load data created in 08 do file from above
@@ -130,16 +130,47 @@ merge m:1 hid grappe using "$pathout\Admin2.dta"
 * Call do file to rename Admin2 names; 
 do "$pathdo\AdminTwoRecode.do"
 
+* Land holdings is missing for many householdsta
+replace lnownLandCult = 0 if lnownLandCult == .
+
 * Set exogenous variables for regression specifications
 global exog1 "femHead marriedHead ageHead literateHead eduMuslimHead educHigh mobile hhSize sexRatio depRatio hhmixed"
 global exog2 "$exog1 mlabor flabor under15Share lnownLandCult "
-global exog3 "$exog2 infraindex wealth agwealth comservindex comhealthindex"
+global exog3 "$exog2 wealth comservindex comhealthindex"
 global exog4 "$exog3 dist_road dist_market annualMeanTemp annualPrecip"
 
 * Set Mayahi as base location; Set Maradi as base location 
-global location "ib(21).admin"
+* global location "ib(21).admin" * not enough obserations in each admin1 unit
 global location2 "i.zae ib(4).region"
 global interact "i.femHead##i.region"
+global cluster "cluster(grappe)"
+
+
+
+* Create linear probability model estimates for shocks
+local wrdlist price hazard ag health
+local i = 1
+foreach x of varlist price hazard health  {
+	* Grab word from word list above
+	local a: word `i' of `wrdlist'
+	display "`a'"
+	
+	* Run 5 regression specifications using global macros defined above
+	qui eststo `x'_1, title("`a' 2011.1"): reg `x' $exog1 $location2, $cluster
+	qui eststo `x'_2, title("`a' 2011.2"): reg `x' $exog2 $location2, $cluster
+	qui eststo `x'_3, title("`a' 2011.3"): reg `x' $exog3 $location2, $cluster
+	qui eststo `x'_3, title("`a' 2011.3"): reg `x' $exog4 $location2, $cluster
+		
+	* Print results to screen and to text files in both wide and long formats
+	esttab `x'_*, se star(* 0.10 ** 0.05 *** 0.01) label
+	esttab `x'_* using "$pathreg/`x'.csv", se star(* 0.10 ** 0.05 *** 0.001) label replace
+	esttab `x'_* using "$pathxls/`x'Wide.csv", wide plain se mlabels(none) label replace
+	display in yellow "Executed regression for `x' variable."
+	local i = `++i'
+}
+
+
+
 
 * Save coefficients and std. errs for R Graphs
 /* NOTE: could not estimate anyshock b/c it is a perfect predictor for Ouallam; */
@@ -147,11 +178,10 @@ eststo clear
 svy, subpop(urbrur): logit anyshock $exog4 $location
 *outreg2 using "$pathreg/shocksFinal", bdec(3) br eform cti(odds ratio) label adds(Observations, e(N), Pop. size , e(N_pop)) replace
 eststo: svy, subpop(urbrur): logit anyshock $exog4 $location
-g byte regFilt = 1 if e(sample)
 
 * Extract the coefficients and standard errors; (http://www.stata.com/statalist/archive/2009-04/msg00240.html)
 matrix V = e(V)
-* Take the sqrt in R to get the standard errors 
+* We'll take the sqrt in R to get the standard errors 
 matrix Var = vecdiag(V)
 matrix A = (e(b)\Var)'
 mat2txt, matrix(A) saving("$pathRin/Anyshock") replace
@@ -185,11 +215,7 @@ eststo: svy, subpop(urbrur): logit droughtshk $exog4 $location2
 esttab, se star(* 0.10 ** 0.05 *** 0.01) label 
 esttab using "$pathRin/WeatherShocks.txt", replace wide plain se mlabels(none) 
 
-* Export cut of data for use in R spatial regression models
-export 
-export delimited using "$pathout\R_spatreg.csv" if regFilt==1, replace
-
-* Estimate the nubmer of female headed households in rural areas (2011 pop estimate, 82% rural)
+* Estimate the nubmer of female headed households in rural areas
 * svmat - creates variables from a matrix
 g popsize2011R = 16468890*.82
 svy, subpop(urbrur): mean femHead
@@ -203,9 +229,8 @@ g femHeadPopLB = popsize2011R*(fh1-se1)
 g femHeadPopUB = popsize2011R*(fh1+se1)
 sum femHeadPop*
 
-/* NOTES: Run SpatReg.R to generate output from Spatial Regressions; Then, run
-ShockGraphs to create forest plots from point estimates and standard errors.
+/* NOTES: See R script to create forest plots from point estimates and standard errors.
 * Located at: "..nigerlsms/r/NigerLogitGraphs.R" and 
-
+* 
 
 
