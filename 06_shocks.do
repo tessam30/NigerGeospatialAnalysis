@@ -24,6 +24,7 @@ tab ms11q01 ms11q03 if ms11q02==1
 
 * Create filter to keep only those shocks that are the 1/2 most severe
 g byte severe = inlist(ms11q03, 1,2)==1
+g byte severe_affected = inlist(ms11q03, 1,2) & ms11q02 == 1
 
 * Food prices, drought, crop disease are most common
 * Few conflict shocks, but we can pursue further
@@ -60,6 +61,18 @@ la var healthshk "HH faced health or death related shock"
 
 g byte finshk = (inlist(ms11q01, 8, 9, 10, 11, 12, 16)==1  & ms11q02==1 & severe==1)
 la var finshk "HH faced financial related shock"
+
+* Standard shocks are price, hazard, health, and any
+g byte hazard 	= inlist(ms11q01, 1, 2) & severe_affected
+g byte price	= inlist(ms11q01, 5, 6, 7) & severe_affected
+g byte ag		= inlist(ms11q01, 3, 4) & severe_affected
+g byte health 	= inlist(ms11q01, 13, 14, 15) & severe_affected
+
+la var hazard "hazard shock"
+la var price "price shock"
+la var ag "ag shock"
+la var health "health shock"
+
 
 * Queue up encoding of food variables
 label copy ms11q04ecode food
